@@ -24,8 +24,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 60px;
-            width: 60px;
+            height: 90px;
+            width: 90px;
             position: relative;
             left: 50px;
             top: 20px;
@@ -65,9 +65,9 @@
         posX = Math.floor(Math.random() * (containerWidth + 1));
         posY = Math.floor(Math.random() * (containerHeight + 1));
 
-        if (posX > 60 && posY > 60) {
-            posX = posX - 60;
-            posY = posY - 60;
+        if (posX > 90 && posY > 90) {
+            posX = posX - 90;
+            posY = posY - 90;
         }
 
         document.getElementById("outer").style.left = `${posX}px`;
