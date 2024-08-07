@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try to click!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            padding-top: 0px;
+        }
+
+        #container {
+            background-color: lightgray;
+            width: 100%;
+            height: 90vh;
+        }
+
+        #outer {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            width: 60px;
+            position: relative;
+            left: 50px;
+            top: 20px;
+        }
+
+        .inner {
+            background-color: blue;
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Try to click the blue dot!</h1>
+    <div id="container">
+        <div id="outer">
+            <a href="" class="inner"></a>
+        </div>
+    </div>
+</body>
+<script>
+    const dot = document.getElementById("outer");
+    const container = document.getElementById("container");
+
+    console.log(dot);
+    dot.addEventListener("mouseenter", changePos);
+
+    function changePos() {
+        console.log("test");
+        let containerWidth = container.clientWidth;
+        let containerHeight = container.clientHeight;
+        console.log("Width: ",containerWidth);
+        console.log("Heigth: ",containerHeight);
+        let posX = 0;
+        let posY = 0;
+        posX = Math.floor(Math.random() * (containerWidth + 1));
+        posY = Math.floor(Math.random() * (containerHeight + 1));
+
+        if (posX > 60 && posY > 60) {
+            posX = posX - 60;
+            posY = posY - 60;
+        }
+
+        document.getElementById("outer").style.left = `${posX}px`;
+        document.getElementById("outer").style.top = `${posY}px`;
+        
+    }
+
+</script>
+</html>
