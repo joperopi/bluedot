@@ -46,34 +46,35 @@
             <a href="" class="inner"></a>
         </div>
     </div>
-</body>
-<script>
-    const dot = document.getElementById("outer");
-    const container = document.getElementById("container");
 
-    console.log(dot);
-    dot.addEventListener("mouseenter", changePos);
+    <script>
+        const dot = document.getElementById("outer");
+        const container = document.getElementById("container");
 
-    function changePos() {
-        console.log("test");
-        let containerWidth = container.clientWidth;
-        let containerHeight = container.clientHeight;
-        console.log("Width: ",containerWidth);
-        console.log("Heigth: ",containerHeight);
-        let posX = 0;
-        let posY = 0;
-        posX = Math.floor(Math.random() * (containerWidth + 1));
-        posY = Math.floor(Math.random() * (containerHeight + 1));
+        console.log(dot);
+        dot.addEventListener("mouseenter", changePos);
 
-        if (posX > 90 && posY > 90) {
-            posX = posX - 90;
-            posY = posY - 90;
+        function changePos() {
+            console.log("test");
+            let containerWidth = container.clientWidth;
+            let containerHeight = container.clientHeight;
+            console.log("Width: ",containerWidth);
+            console.log("Heigth: ",containerHeight);
+            let posX = 0;
+            let posY = 0;
+            posX = Math.floor(Math.random() * (containerWidth + 1));
+            posY = Math.floor(Math.random() * (containerHeight + 1));
+
+            if (posX > 90 && posY > 90) {
+                posX = posX - 90;
+                posY = posY - 90;
+            }
+
+            document.getElementById("outer").style.left = `${posX}px`;
+            document.getElementById("outer").style.top = `${posY}px`;
+            
         }
 
-        document.getElementById("outer").style.left = `${posX}px`;
-        document.getElementById("outer").style.top = `${posY}px`;
-        
-    }
-
-</script>
+    </script>
+</body>
 </html>
